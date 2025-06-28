@@ -7,3 +7,14 @@
 
 ### Were there any parts of the lab you found challenging?
 <p>Yes, the most challenging part was working with the external API. Handling API responses, dealing with CORS restrictions, and making sure the data was properly fetched on the backend and displayed correctly on the frontend took extra time and debugging.</p>
+
+
+# Flavor-table 2 
+
+### How many hours did it take you to complete this assignment?
+
+<p>It took me approximately 5 to 6 hours to complete the backend and server-side functionality. Additionally, I spent around one full day on integrating the frontend with the backend to ensure everything worked smoothly together.</p>
+
+### Were there any parts of the lab you found challenging?
+
+<p>Yes, the integration between the frontend and backend was the most challenging part of the lab. Making sure that the data flow worked correctly, handling form submissions, managing dynamic updates, and debugging issues like undefined values or incorrect HTTP methods required careful attention and testing.</p>

@@ -10,14 +10,14 @@ async function search() {
         alert("please enter ingredients");
         return;
     }
-    
+
     try {
-        const response = await fetch(`/recipes/search?ingredients=${encodeURIComponent(ingredient)}`);
+        const response = await fetch(`/api/recipes/recipes/search?ingredients=${encodeURIComponent(ingredient)}`);
         const data = await response.json();
         searchCon.innerHTML = '';
         data.forEach(recipe => {
-            if(ingredient!==recipe){
-            searchCon.innerHTML += `
+            if (ingredient !== recipe) {
+                searchCon.innerHTML += `
     <div class="recipe1">
                     <h2>${recipe.title}</h2>
                     <img src="${recipe.image}" alt="${recipe.title}" />
@@ -26,30 +26,43 @@ async function search() {
                    <button class="add-favorite" 
                   data-id="${recipe.id}" 
                   data-title="${recipe.title}" 
-                  data-image="${recipe.image}">
+                  data-image="${recipe.image}"
+                  data-instructions="${recipe.instructions}"
+                  data-ingredient="${recipe.ingredient}"
+                data-readin="${recipe.readin}">
                   Add to Favorite
                 </button></div>
                 
-    `;}
-    else{
-        alert("not fund")
-    }
-            document.querySelectorAll(".add-favorite").forEach(button => {
-                button.addEventListener("click", function () {
-                    const parse = {
-                        id: this.dataset.id,
-                        title: this.dataset.title,
-                        image:this.dataset.image
-                    }
-                    let items = JSON.parse(localStorage.getItem("favoriteRecipes")) || [];
-                    if (!items.find(i => i.id === parse.id)) {
-                        items.push(parse);
-                        localStorage.setItem("favoriteRecipes", JSON.stringify(items));
+    `;
+            }
+            else {
+                alert("not fund")
+            }
+                document.querySelectorAll(".add-favorite").forEach(button => {
+                    button.addEventListener("click", function () {
+                        let item={
+                            title:this.dataset.title,
+                            image:this.dataset.image, 
+                            instructions:this.dataset.instructions,
+                            ingredient:this.dataset.ingredient,
+                            readin:this.dataset.readin
+                        }
+                        if(item.readin===""||item.readin===null||item.readin===undefined){
+                            item.readin=null;
+                        }
+                        else{
+                            item.readin=Number(item.readin)
+                        }
+                        axios.post("/api/recipes/post",item)
+                        .then(response=>{
+                            console.log(response);
+                            
+                        })
+                        .catch(error=>{
+                            console.log(error);
+                            
+                        })
 
-                    }
-                    else {
-                        alert("items already in favoarite list ")
-                    }
                 })
             })
         });
