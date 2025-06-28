@@ -4,17 +4,23 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 app.use(express.static('public'));
+const pg =require("pg");
+app.use(express.json());
+const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
 
 const recipesRouter = require('./routes/recipes');
-app.use(recipesRouter);
+app.use("/api/recipes",recipesRouter);
 const homeRouter = require('./routes/home');
 app.use(homeRouter);
 
 
-
 const Port = process.env.PORT || 3000;
+pool.connect()
+.then(()=>{
 app.listen(Port, () => {
     console.log(`this is port web used ${Port}`);
-})
-
+})})
+.catch((error)=>{
+console.log(error);
+});

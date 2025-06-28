@@ -32,7 +32,6 @@ html, body {
     background-color: #B6B09F;
     height: 100px;
     margin: 0;
-        font-family: "Redressed", cursive;
 
 }
 #search-header{
@@ -133,6 +132,26 @@ html, body {
 #Delete:hover{
     transform: translateY(-2px);
 }
+.edit{
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  gap: 18px;
+  border-radius: 15px;
+  padding: 0 10px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.edit:hover{
+  transform: translate-y(-2px);
+}
+
 #ingredient-input{
     height: 30px;
     border: 2px solid black;
@@ -399,3 +418,57 @@ background-color: #EAE4D5;
 .delete:hover {
   background-color: #c0392b;
 }
+
+.edit-form{
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+  .edit-form input[name="title"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+    
+  }
+.edit-form input[name="image"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+    
+  }.edit-form input[name="ingredients"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+    
+  }.edit-form input[name="instructions"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+  }.edit-form input[name="readin"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+  }
+  .edit-form button[name="save"]{
+    height: 19px;
+    border: 1px solid black;
+    border-radius: 9px;
+    width: 97px;
+    background-color: #e74c3c;
+    transition: transform 0.2s ease;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 50px;    
+  }
