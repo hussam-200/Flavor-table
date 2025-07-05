@@ -17,11 +17,11 @@ const login=require("./routes/users");
 app.use("/api",login);
 
 
-const Port = process.env.Port || 3000;
+const PORT = process.env.PORT || 3000;
 pool.connect()
 .then(()=>{
 app.listen(Port, () => {
-    console.log(`this is port web used ${Port}`);
+    console.log(`this is port web used ${PORT}`);
 })})
 .catch((error)=>{
 console.log(error);
