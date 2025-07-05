@@ -12,7 +12,7 @@ const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 const recipesRouter = require('./routes/recipes');
 app.use("/api/recipes",recipesRouter);
 const homeRouter = require('./routes/home');
-app.use("/users",homeRouter);
+app.use(homeRouter);
 const login=require("./routes/users");
 app.use("/api",login);
 
