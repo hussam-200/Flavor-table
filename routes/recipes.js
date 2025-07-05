@@ -70,7 +70,7 @@ router.post("/post", async (req, res) => {
     if (typeof ingredients !== "string") {
       ingredients = JSON.stringify(ingredients);
     }
-    const result = await pool.query("INSERT INTO recipes(title,image,instructions,ingredients,readin) VALUES($1,$2,$3,$4,$5)  RETURNING *",
+    const result = await pool.query("INSERT INTO public.recipes(title,image,instructions,ingredients,readin) VALUES($1,$2,$3,$4,$5)  RETURNING *",
       [title, image, instructions, ingredients, readin]
     )
     res.json(result.rows[0]);
@@ -81,7 +81,7 @@ router.post("/post", async (req, res) => {
 })
 router.get("/all", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM recipes");
+    const result = await pool.query("SELECT * FROM public.recipes");
     res.json(result.rows);
   } catch (error) {
     console.log("error giting data ", error);
@@ -90,7 +90,7 @@ router.get("/all", async (req, res) => {
 })
 router.delete("/delete/all", async (req, res) => {
   try {
-    const response = await pool.query("DELETE FROM recipes");
+    const response = await pool.query("DELETE FROM public.recipes");
     res.json(response.rows);
   } catch (error) {
     console.log("Error deleting all recipes:", error);
@@ -100,7 +100,7 @@ router.delete("/delete/all", async (req, res) => {
 router.delete("/delete/:id", async (req, res,) => {
   const { id } = req.params;
   try {
-    const result = await pool.query("DELETE FROM recipes WHERE id=$1 RETURNING *",
+    const result = await pool.query("DELETE FROM public.recipes WHERE id=$1 RETURNING *",
       [id]
     )
     res.json(result.rows[0]);
@@ -124,7 +124,7 @@ router.put("/put/:id", async (req, res) => {
       ingredients = JSON.stringify(ingredients);
     }
     const result = await pool.query(
-      "UPDATE recipes SET title=$1,image=$2,instructions=$3,ingredients=$4,readin=$5 WHERE id=$6 RETURNING *",
+      "UPDATE public.recipes SET title=$1,image=$2,instructions=$3,ingredients=$4,readin=$5 WHERE id=$6 RETURNING *",
       [title, image, instructions, ingredients, readin, id]
     );
     res.json(result.rows[0]);
