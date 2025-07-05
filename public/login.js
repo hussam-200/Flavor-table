@@ -38,7 +38,7 @@ form.addEventListener('submit', function (event) {
             console.log(token);
             
 
-            window.location.href = "/index.html";
+            window.location.href = "/random.html";
         })
         .catch(error => {
             console.log(error);
