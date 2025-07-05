@@ -1,4 +1,3 @@
-
 const container = document.getElementById("random-container");
 const randomButton = document.getElementById("random");
 if (randomButton) {
@@ -26,7 +25,7 @@ async function fetchdata() {
   data-title="${recipe.title}" 
   data-image="${recipe.image}"
   data-instructions="${recipe.instructions}"
-  data-ingredients='${JSON.stringify(recipe.extendedIngredients)}'
+data-ingredients='${JSON.stringify(recipe.extendedIngredients).replace(/"/g, '&quot;')}'
   data-readin="${recipe.readin || ''}">
   Add to Favorite
 </button>
@@ -59,13 +58,13 @@ async function fetchdata() {
           title: this.dataset.title,
           image: this.dataset.image,
           instructions: this.dataset.instructions,
-          ingredients: JSON.parse(this.dataset.ingredients),
+          ingredients: JSON.parse(this.dataset.ingredients.replace(/&quot;/g, '"')),
           readin: this.dataset.readin
         };
-        if(items.readin===""||items.readin===null||items.readin===undefined){
-          readin=null;
-        }else{
-          readin=Number(readin);
+        if (items.readin === "" || items.readin === null || items.readin === undefined) {
+          items.readin = null;
+        } else {
+          items.readin = Number(items.readin);
         }
         fetch("/api/recipes/post", {
           method: 'POST',

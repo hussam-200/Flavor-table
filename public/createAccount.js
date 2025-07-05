@@ -9,7 +9,7 @@ form.addEventListener('submit', function (event) {
     axios.post("/api/auth/register", item)
         .then(response => {
             alert("your account created  ")
-            window.location.href = "index.html"
+            window.location.href = "random.html"
 
         })
         .catch(error => {
