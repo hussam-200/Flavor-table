@@ -18,3 +18,12 @@
 ### Were there any parts of the lab you found challenging?
 
 <p>Yes, the integration between the frontend and backend was the most challenging part of the lab. Making sure that the data flow worked correctly, handling form submissions, managing dynamic updates, and debugging issues like undefined values or incorrect HTTP methods required careful attention and testing.</p>
+
+# Flavor-table-Deployment
+### How many hours did it take you to complete this assignment?
+
+<p>It took me approximately 2 hours to complete the backend and server-side functionality. Additionally, I spent about 3 hours integrating the frontend with the backend and building the HTML form to ensure everything worked smoothly together.</p>
+
+### Were there any parts of the lab you found challenging?
+
+<p>No, I didn’t find any part of the lab challenging. Everything was straightforward and felt like a piece of cake.</p>
