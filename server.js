@@ -3,9 +3,14 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-app.use(express.static('public'));
+
 const pg =require("pg");
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.redirect('/users/');
+});
+app.use(express.static('public'));
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
 
@@ -16,9 +21,7 @@ app.use("/users",homeRouter);
 const login=require("./routes/users");
 app.use("/api",login);
 
-app.get('/', (req, res) => {
-  res.redirect('/users/');
-});
+
 
 const PORT = process.env.PORT || 3000;
 pool.connect()
