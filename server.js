@@ -16,6 +16,9 @@ app.use("/users",homeRouter);
 const login=require("./routes/users");
 app.use("/api",login);
 
+app.get('/', (req, res) => {
+  res.redirect('/users/');
+});
 
 const PORT = process.env.PORT || 3000;
 pool.connect()
