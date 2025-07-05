@@ -472,3 +472,138 @@ background-color: #EAE4D5;
     align-items: center;
     margin: 10px 0px 0px 50px;    
   }
+.container-add {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+ #add-account-form{
+        display: grid;
+    gap: 6px;
+    border: 1px solid black;
+    width: 364px;
+    padding: 17px;
+    border-radius: 22px;
+    background-color: #B6B09F;
+ }
+ #add-account-form h2{
+  text-align: center;
+  margin: 25px;
+ }
+ #add-account-form button{
+    height: 31px;
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 9px;
+  background-color: #e74c3c;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+#add-account-form input[name="username"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+        height: 31px;
+        background-color: #E4EFE7;
+  }
+  #add-account-form input[name="email"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+        height: 31px;
+                background-color: #E4EFE7;
+
+  }
+  #add-account-form input[name="password"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+        height: 31px;
+                background-color: #E4EFE7;
+
+  }
+  .login {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+ #login-form{
+        display: grid;
+    gap: 6px;
+    border: 1px solid black;
+    width: 364px;
+    padding: 17px;
+    border-radius: 22px;
+    background-color: #B6B09F;
+ }
+ #login-form h2{
+  text-align: center;
+    margin: 25px;
+ }
+ #login-form button{
+    height: 31px;
+    width: 120px;
+    border: 1px solid black;
+    border-radius: 9px;
+    background-color: #e74c3c;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+#login-form input[name="username"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+        height: 31px;
+        background-color: #E4EFE7;
+  }
+  #login-form input[name="email"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+        height: 31px;
+                background-color: #E4EFE7;
+
+  }
+  #login-form input[name="password"]{
+        border: 2px solid;
+    border-radius: 7px;
+    width: 100%;
+        padding: 0px 0px 0px 6px;
+        height: 31px;
+                background-color: #E4EFE7;
+
+  }
+  #creat-account{
+height: 31px;
+    width: 120px;
+    border: 1px solid black;
+    border-radius: 9px;
+    background-color: #e74c3c;
+    color: rgb(0, 0, 0);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    
+  }

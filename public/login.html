@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Redressed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="fav-header">
+        <h1>Flavor Table</h1>
+        <button id="creat-account" onclick="window.location.href='createAccount.html'">New Account</button>
+        </header>
+        <div class="login">
+        <form id="login-form">
+            <h2>Login to Your Account</h2>
+            <label for="username">Username</label>
+            <input  type="text" id="username" placeholder="username"name="username"><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="email"name="email"><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="password"name="password"><br>
+            <button type="submit" id="login-button">login</button>
+        </form>
+    </div>
+    <footer id="footer">
+        <p>Hussam Ibrahim</p>
+    </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -12,10 +12,12 @@ const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 const recipesRouter = require('./routes/recipes');
 app.use("/api/recipes",recipesRouter);
 const homeRouter = require('./routes/home');
-app.use(homeRouter);
+app.use("/users",homeRouter);
+const login=require("./routes/users");
+app.use("/api",login);
 
 
-const Port = process.env.PORT || 3000;
+const Port = process.env.Port || 3000;
 pool.connect()
 .then(()=>{
 app.listen(Port, () => {
