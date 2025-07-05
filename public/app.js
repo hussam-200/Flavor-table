@@ -77,7 +77,7 @@ async function fetchdata() {
               throw new Error(response.statusText);
 
             }
-            return response;
+            return response.json();
           }).then(data => {
             console.log("Recipe added:", data);
           })
